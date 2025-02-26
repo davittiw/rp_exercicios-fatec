@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex04
+#define ex05
 
 #ifdef ex01
 main (){
@@ -63,3 +63,21 @@ main (){
     }
 }
 #endif // ex04
+
+#ifdef ex05
+main () {
+
+    float valorAula, salarioTotal;
+    int totalAula;
+
+    printf("Digite o valor por aula: ");
+    scanf("%f", &valorAula);
+
+    printf("Digite a quantidade de aulas: ");
+    scanf("%i", &totalAula);
+
+    salarioTotal = valorAula * totalAula;
+
+    printf("O salario total do professor é %.2f", salarioTotal);
+    }
+#endif // ex05
