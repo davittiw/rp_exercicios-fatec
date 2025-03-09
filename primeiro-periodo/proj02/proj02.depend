@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1740326260 source:c:\users\lucct\documents\trabalho\projetos\proj02\main.c
+	<stdio.h>
+	<stdlib.h>
+
