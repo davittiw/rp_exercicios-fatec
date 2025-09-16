@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex02
+#define ex04
 
 #ifdef ex01
 int calculaData(int m, int a, int d)
@@ -102,25 +102,67 @@ int main()
 #endif // ex01
 
 #ifdef ex02
-int main()
-{
+int main() {
+
 }
 #endif // ex02
 
 #ifdef ex03
 int main()
 {
+
 }
 #endif // ex03
 
 #ifdef ex04
 int main()
 {
+    int n1, n2;
+    char respostaFinal = 'Y'; // verificar se usuário deseja reiniciar o programa
+
+    while (respostaFinal != 'N' && respostaFinal != 'n')
+    {
+        printf("Digite o primeiro numero inteiro: ");
+        scanf("%d", &n1);
+
+        printf("Digite o segundo numero inteiro: ");
+        scanf("%d", &n2);
+
+        int multiplica, soma, subtrai, divide;
+
+        multiplica = n1 * n2;
+        soma = n1 + n2;
+        subtrai = n1 - n2;
+        divide = n1 / n2;
+
+        printf("\nO resultado da multiplicacao eh: %d \n", multiplica);
+        printf("\nO resultado da soma eh: %d \n", soma);
+        printf("\nO resultado da subtracao eh: %d \n", subtrai);
+        printf("\nO resultado da divisao eh: %d \n", divide);
+
+        // Pergunta se o usuário deseja continuar o programa
+        printf("Deseja continuar o programa?\n");
+        printf("'Y' para sim e 'N' para nao: ");
+        scanf(" %c", &respostaFinal);
+
+        // Verificação da resposta
+        while (respostaFinal != 'Y' && respostaFinal != 'y' && respostaFinal != 'N' && respostaFinal != 'n')
+        {
+            printf("Digite um valor valido!\n");
+            printf("Digite 'Y' para sim e 'N' para nao: ");
+            scanf(" %c", &respostaFinal);
+        }
+        if (respostaFinal == 'Y' || respostaFinal == 'y')
+        {
+            system("cls");
+        }
+    }
 }
 #endif // ex04
 
 #ifdef ex05
 int main()
 {
+
 }
 #endif // ex05
