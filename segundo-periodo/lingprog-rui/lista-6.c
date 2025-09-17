@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex02
+#define ex03
 
 #ifdef ex01
 int calculaData(int m, int a, int d)
@@ -172,7 +172,38 @@ int main() {
 #ifdef ex03
 int main()
 {
+    int num1, num2;
+    char respostaFinal = 'Y';
 
+    while (respostaFinal != 'N' && respostaFinal != 'n') {
+    printf("Digite dois numeros inteiros: ");
+    scanf("%d %d", &num1, &num2);
+
+    int a = num1 & num2;
+    int b = num1 | num2;
+    int c = num1 ^ num2;
+
+    printf("\nOperador AND: \n\tEm decimal: %d \n\tEm hexadecimal: %x\n", a);
+    printf("\nOperador OU: \n\tEm decimal: %d \n\tEm hexadecimal: %x\n", b);
+    printf("\nOperador OU EXCLUSIVO: \n\tEm decimal: %d \n\tEm hexadecimal: %x\n", c);
+
+    // Pergunta se o usuário deseja continuar o programa
+        printf("\nDeseja continuar o programa?\n");
+        printf("'Y' para sim e 'N' para nao: ");
+        scanf(" %c", &respostaFinal);
+
+        // Verificação da resposta
+        while (respostaFinal != 'Y' && respostaFinal != 'y' && respostaFinal != 'N' && respostaFinal != 'n')
+        {
+            printf("Digite um valor valido!\n");
+            printf("Digite 'Y' para sim e 'N' para nao: ");
+            scanf(" %c", &respostaFinal);
+        }
+        if (respostaFinal == 'Y' || respostaFinal == 'y')
+        {
+            system("cls");
+        }
+    }
 }
 #endif // ex03
 
