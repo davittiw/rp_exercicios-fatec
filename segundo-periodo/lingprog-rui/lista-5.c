@@ -82,7 +82,7 @@ int main()
         }
     }
 }
-#endif ex1
+#endif // ex1
 
 #ifdef ex2
 char nome1[8];
