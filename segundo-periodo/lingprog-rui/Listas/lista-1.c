@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex5
+#define ex1
 
 #ifdef ex1
 int main()
