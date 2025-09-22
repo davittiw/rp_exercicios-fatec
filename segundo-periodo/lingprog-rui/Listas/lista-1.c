@@ -6,22 +6,23 @@
 #ifdef ex1
 int main()
 {
-    int A=10, B=5 ;
-    printf("Valor de A: %d \n Valor de B: %d\n",A,B);
+    int A = 10, B = 5;
+    printf("Valor de A: %d \n Valor de B: %d\n", A, B);
 
     A = A ^ B;
     B = A ^ B;
     A = A ^ B;
 
     printf("Valores Permutados: \n");
-    printf("valor de A: %d\n Valor de B: %d", A,B);
+    printf("valor de A: %d\nValor de B: %d", A, B);
 
+    return 0;
 }
 #endif // ex1
 
 #ifdef ex2
-
-int main(){
+int main()
+{
     short s;
     long l;
     int i;
@@ -54,66 +55,65 @@ int main(){
     printf("    %-15hd     %-15ld     %-15d\n", s, l, i);
     printf("              %-15.2f     %-15.5lf     %-15c\n", f, d, c);
 
+    return 0;
 }
 #endif // ex2
 
 #ifdef ex3
-
-int main(){
-int numero, multiplo, minimo;
-
-
-printf("Digite um numero: ");
-scanf("%d", &numero);
-
-printf("Digite um numero limitador: ");
-scanf("%d", &minimo);
-
-
-if(numero==0)
+int main()
 {
-    printf("Erro de Divisao");
+    int numero, multiplo, minimo;
 
-}
-else
-{
-multiplo = (minimo/numero + 1)* numero;
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
 
-printf("O menor multiplo de %d maior que %d e: %d", numero, minimo, multiplo);
-}
+    printf("Digite um numero limitador: ");
+    scanf("%d", &minimo);
+
+    if (numero == 0)
+    {
+        printf("Erro de Divisao");
+    }
+    else
+    {
+        multiplo = (minimo / numero + 1) * numero;
+        printf("O menor multiplo de %d maior que %d e: %d", numero, minimo, multiplo);
+    }
+
+    return 0;
 }
 #endif // ex3
 
 #ifdef ex4
-
 int main()
 {
-    int hora, min, seg,tempo;
+    int hora, min, seg, tempo;
 
     printf("Digite um tempo em segundos: ");
     scanf("%d", &tempo);
 
-    hora = tempo/3600;
-    tempo= tempo % 3600;
-    min= tempo/60;
-    seg= tempo % 60;
+    hora = tempo / 3600;
+    tempo = tempo % 3600;
+    min = tempo / 60;
+    seg = tempo % 60;
 
-    printf("A conversao e: %dh %dmin %ds", hora, min,seg);
+    printf("A conversao e: %dh %dmin %ds", hora, min, seg);
 }
 #endif // ex4
 
 #ifdef ex5
-int inverter (int num)
+int inverter(int num)
 {
     int invt = 0;
 
-    while(num>0)
+    while (num > 0)
     {
-        invt= 10 * invt + num % 10;
-        num/=10;
+        invt = 10 * invt + num % 10;
+        num /= 10;
     }
     return invt;
 }
+
 int main()
 {
     int num, invert;
@@ -123,13 +123,13 @@ int main()
         printf("Digite um numero com 3 digitos: ");
         scanf("%d", &num);
 
-        if(num<0)
+        if (num < 100 || num > 999)
         {
-            printf("Valor Invalido! Digite um numero positivo (maior que zero)");
+            printf("Valor Invalido! Digite um numero de tres digitos (entre 100 e 999)");
         }
-    }while(num<0);
+    } while (num < 100 || num > 999);
 
-    invert= inverter(num);
+    invert = inverter(num);
     printf("O numero digitado invertido fica: %d", invert);
 }
 #endif // ex5
