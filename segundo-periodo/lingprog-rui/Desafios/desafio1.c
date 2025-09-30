@@ -104,96 +104,144 @@ void entrada()
 void pesquisaLivro()
 {
     char pesquisa[20];
-    
+
     FILE *arquivoLivro = fopen("livro.bin", "rb");
     FILE *arquivoAutor = fopen("autor.bin", "rb");
-    
+
     for (int i = 0; i < 3; i++)
     {
         fread(livros[i], sizeof(char), 20, arquivoLivro);
         fread(autores[i], sizeof(char), 20, arquivoAutor);
     }
-    
+
     fclose(arquivoLivro);
     fclose(arquivoAutor);
-    
+
     printf("\nDigite o nome do livro desejado: ");
     scanf(" %19[^\n]", pesquisa);
 
     int encontrado = 0;
 
-    for(int j = 0; j < 3; j++) {
+    for (int j = 0; j < 3; j++)
+    {
         int i = 0, iguais = 1;
 
-        while(pesquisa[i] != '\0' || livros[j][i] != '\0') {
-            if(pesquisa[i] != livros[j][i]) {
+        while (pesquisa[i] != '\0' || livros[j][i] != '\0')
+        {
+            if (pesquisa[i] != livros[j][i])
+            {
                 iguais = 0;
                 break;
             }
             i++;
         }
 
-        if(iguais) {
+        if (iguais)
+        {
             printf("\tNome do livro: %s\n", livros[j]);
             printf("\tNome do autor: %s\n", autores[j]);
             encontrado = 1;
         }
     }
 
-    if (!encontrado) {
+    if (!encontrado)
+    {
         printf("livro não foi encontrado.");
     }
-    
 }
 
 void pesquisaAutor()
 {
     char pesquisa[20];
-    
+
     FILE *arquivoLivro = fopen("livro.bin", "rb");
     FILE *arquivoAutor = fopen("autor.bin", "rb");
-    
+
     for (int i = 0; i < 3; i++)
     {
         fread(livros[i], sizeof(char), 20, arquivoLivro);
         fread(autores[i], sizeof(char), 20, arquivoAutor);
     }
-    
+
     fclose(arquivoLivro);
     fclose(arquivoAutor);
-    
+
     printf("\nDigite o nome do autor desejado: ");
     scanf(" %19[^\n]", pesquisa);
 
     int encontrado = 0;
 
-    for(int j = 0; j < 3; j++) {
+    for (int j = 0; j < 3; j++)
+    {
         int i = 0, iguais = 1;
 
-        while(pesquisa[i] != '\0' || autores[j][i] != '\0') {
-            if(pesquisa[i] != autores[j][i]) {
+        while (pesquisa[i] != '\0' || autores[j][i] != '\0')
+        {
+            if (pesquisa[i] != autores[j][i])
+            {
                 iguais = 0;
                 break;
             }
             i++;
         }
 
-        if(iguais) {
+        if (iguais)
+        {
             printf("\tNome do autor: %s\n", autores[j]);
             printf("\tNome do livro: %s\n\n", livros[j]);
             encontrado = 1;
         }
     }
 
-    if (!encontrado) {
+    if (!encontrado)
+    {
         printf("autor nao foi encontrado.");
     }
-    
 }
 
 void altera()
 {
-    printf("sadadad");
+    int selectAltera;
+
+    FILE *arquivoLivro = fopen("livro.bin", "rb");
+    FILE *arquivoAutor = fopen("autor.bin", "rb");
+
+    for (int i = 0; i < 3; i++)
+    {
+        fread(livros[i], sizeof(char), 20, arquivoLivro);
+        fread(autores[i], sizeof(char), 20, arquivoAutor);
+    }
+
+    fclose(arquivoLivro);
+    fclose(arquivoAutor);
+
+    printf("Opcoes de Alteracao: \n");
+    printf("\t1 - %s \n\t2 - %s \n\t3 - %s", livros[0], livros[1], livros[2]);
+
+    do
+    {
+        printf("\nSelecione qual livro deseja alterar: ");
+        scanf("%d", &selectAltera);
+    } while (selectAltera < 1 || selectAltera > 3);
+
+    printf("Digite o nome do novo livro: ");
+    scanf(" %19[^\n]", livros[selectAltera - 1]);
+    getchar();
+
+    printf("Digite o nome do autor: ");
+    scanf(" %19[^\n]", autores[selectAltera - 1]);
+    getchar();
+
+    arquivoLivro = fopen("livro.bin", "wb");
+    arquivoAutor = fopen("autor.bin", "wb");
+
+    fwrite(livros[selectAltera - 1], sizeof(char), 20, arquivoLivro);
+    fwrite(autores[selectAltera - 1], sizeof(char), 20, arquivoAutor);
+
+    fclose(arquivoLivro);
+    fclose(arquivoAutor);
+
+    printf("Dado alterado com sucesso. \n\n");
 }
 
 int main()
