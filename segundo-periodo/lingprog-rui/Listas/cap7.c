@@ -41,8 +41,17 @@ void recebeDados (int i) {
     scanf(" %11[^\n]", infoUser[i].cep);
 }
 
-void mostraDados (int i) {
+void mostraDados () {
+    printf("\n--- DADOS CADASTRADOS ---\n");
 
+    for(int j = 0; j < 3; j++) {
+        printf("\nCADASTRO: %d \n", j + 1);
+        printf("Nome: %s\n", infoUser[j].nome);
+        printf("Endereco: %s\n", infoUser[j].end);
+        printf("Cidade: %s\n", infoUser[j].cidade);
+        printf("Estado: %s\n", infoUser[j].estado);
+        printf("CEP: %s\n", infoUser[j].cep);
+    }
 }
 
 int main()
@@ -51,21 +60,23 @@ int main()
     
     while(resposta == 'Y' || resposta == 'y') {
         for(int i=0; i < 4; i++) {
-            printf("CADASTRO: %d \n", i + 1);
+            printf("\nCADASTRO: %d \n", i + 1);
             recebeDados(i);
         }
+
+        mostraDados();
 
         printf("\nFim do Programa!\n");
 
         printf("Deseja continuar?");
-        printf("\t\n Y - Continuar \nN - Finalizar");
+        printf("\t\nY - Continuar \nN - Finalizar\n");
         scanf("%s", &resposta);
 
         if (resposta != 'Y' && resposta != 'y' && resposta != 'N' && resposta !='n') {
-            printf("Digite as opcoes corretamente!\n");
+            printf("\nDigite as opcoes corretamente!\n");
 
             printf("Deseja continuar o programa?");
-            printf("\t\n Y - Continuar \nN - Finalizar");
+            printf("\t\nY - Continuar \nN - Finalizar\n");
             scanf(" %c", &resposta);
         }
     }
