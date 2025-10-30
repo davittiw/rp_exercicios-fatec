@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex1
+#define ex3
 
 #ifdef ex1
 int main()

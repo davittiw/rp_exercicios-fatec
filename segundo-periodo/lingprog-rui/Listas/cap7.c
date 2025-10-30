@@ -1,12 +1,90 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <locale.h>
 
-#define ex04
+#define ex01
 
 #ifdef ex01
-main()
-{
+// Estrutura global
+struct Dados {
+    char c;
+    int i;
+    long l;
+    float f;
+    double d;
+    unsigned char uc;
+    unsigned int ui;
+    unsigned long ul;
+};
 
+// Variável global
+struct Dados dados;
+
+// Função para ler os dados
+void lerDados() {
+    printf("Digite um caractere: ");
+    scanf(" %c", &dados.c);
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &dados.i);
+
+    printf("Digite um valor long: ");
+    scanf("%ld", &dados.l);
+
+    printf("Digite um valor de ponto flutuante: ");
+    scanf("%f", &dados.f);
+
+    printf("Digite um valor double: ");
+    scanf("%lf", &dados.d);
+
+    printf("Digite um valor unsigned char (0 a 255): ");
+    scanf("%hhu", &dados.uc);
+
+    printf("Digite um valor unsigned int: ");
+    scanf("%u", &dados.ui);
+
+    printf("Digite um valor unsigned long: ");
+    scanf("%lu", &dados.ul);
+}
+
+
+void imprimirDados() {
+    printf("\n====================================================================\n");
+    printf("1234567890123456789012345678901234567890123456789012345678901234567890\n");
+    printf("%4c%6d%7ld%16.2f%15.2lf\n",
+           dados.c, dados.i, dados.l, dados.f, dados.d);
+    printf("%10u%12u%13lu\n", dados.uc, dados.ui, dados.ul);
+    printf("======================================================================\n");
+}
+
+
+int main() {
+    char resposta = 'Y';
+    setlocale(LC_ALL, "Portuguese");
+    while(resposta != 'N' && resposta != 'n'){
+        lerDados();
+        imprimirDados();
+
+        printf("\nPrograma finalizado pelo usuario.\n");
+
+        //Pergunta se o usuário deseja continuar o programa
+        printf("\nDeseja continuar o programa?\n");
+        printf("Digite 'Y' para sim e 'N' para não: \n");
+        scanf(" %c", &resposta);
+        getchar();
+        //Verificação da resposta
+        while(resposta != 'Y' && resposta != 'y' && resposta != 'N' && resposta != 'n'){
+                printf("Digite um valor válido!\n");
+                printf("Digite 'Y' para sim e 'N' para não: ");
+                scanf(" %c", &resposta);
+                getchar();
+        }
+        if (resposta == 'Y' || resposta == 'y'){
+            system("cls");
+        }
+    }
+    return 0;
 }
 #endif
 
