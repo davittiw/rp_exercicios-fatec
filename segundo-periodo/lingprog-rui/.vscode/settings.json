@@ -2,6 +2,7 @@
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
     "CAP8 2024 pont.C": "cpp",
-    "CAP9 2024 endereço.C": "cpp"
+    "CAP9 2024 endereço.C": "cpp",
+    "CAP10 2024 arq.C": "cpp"
   }
 }
