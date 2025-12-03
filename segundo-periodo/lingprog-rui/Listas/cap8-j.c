@@ -2,72 +2,13 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define ex03
+#define ex004
 
-#ifdef ex01
-void main() {
-    char op;
+#ifdef ex001
 
-    do {
-        char c;
-        int i;
-        long l;
-        unsigned u;
-        float f;
-        double d;
-        unsigned long ul;
-        unsigned char uc;
+#endif //ex001
 
-        char *pc = &c;
-        int *pi = &i;
-        long *pl = &l;
-        unsigned *pu = &u;
-        float *pf = &f;
-        double *pd = &d;
-        unsigned long *pul = &ul;
-        unsigned char *puc = &uc;
-
-        printf("Digite um char: ");
-        scanf(" %c", pc);
-
-        printf("Digite um int: ");
-        scanf(" %d", pi);
-
-        printf("Digite um long: ");
-        scanf(" %ld", pl);
-
-        printf("Digite um unsigned: ");
-        scanf(" %u", pu);
-
-        printf("Digite um float: ");
-        scanf(" %f", pf);
-
-        printf("Digite um double: ");
-        scanf(" %lf", pd);
-
-        printf("Digite um unsigned long: ");
-        scanf(" %lu", pul);
-
-        printf("Digite um unsigned char: ");
-        scanf(" %hhu", puc);
-
-
-        printf("\n");
-        printf("        10        20        30        40        50        60\n");
-        printf("123456789012345678901234567890123456789012345678901234567890\n");
-
-        printf("    %6d              %6ld              %6u\n", *pi, *pl, *pu);
-        printf("             %6.1f              %6.1f              %c\n", *pf, *pd, *pc);
-        printf("          %10lu       %10u\n", *pul, *puc);
-
-        printf("\nDeseja continuar o Exercicio 1? (S/N): ");
-        scanf(" %c", &op);
-    } while(op == 'S' || op == 's');
-}
-#endif // ex01
-
-
-#ifdef ex02
+#ifdef ex002
 int main()
 {
     int nums = 0, cont = 0, media = 0;
@@ -116,12 +57,10 @@ int main()
     }
     return 0;
 }
-#endif // ex02
+#endif // ex002
 
-
-#ifdef ex03
-char string1[11], string2[11];
-
+#ifdef ex003
+char string1[10], string2[10];
 int comparaString(){
     char *pstring1, *pstring2;
     int cont = 0;
@@ -179,10 +118,10 @@ int main()
     }
     return 0;
 }
-#endif // ex03
+#endif // ex003
 
-
-#ifdef ex04
+#ifdef ex004
+// Vetor global com as letras
 char vetor[] = {'b', 'd', 'f', 'h', 'j', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y'};
 
 // Fun��o de busca usando ponteiro
@@ -230,23 +169,22 @@ int main() {
     }
     return 0;
 }
-#endif // ex04
+#endif // ex004
 
-
-#ifdef ex05
+#ifdef ex005
 // Estrutura com os campos pedidos
 struct Endereco {
     char nome[50];
     char end[50];
     char cidade[40];
-    char estado[3]; // UF + /0  
+    char estado[3];
     char cep[15];
 };
 
 // Vetor global de 4 estruturas
 struct Endereco vetor[4];
 
-// Fun��o para ler os dados usando ponteiros    
+// Fun��o para ler os dados usando ponteiros
 void lerEnderecos(struct Endereco *p) {
     for (int i = 0; i < 4; i++) { // loop sobre o vetor
         printf("Registro %d:", i + 1);
@@ -308,19 +246,8 @@ int main() {
     }
     return 0;
 }
-#endif // ex05
+#endif // ex005
 
+#ifdef ex006
 
-#ifdef ex06
-struct Data {
-    int dia;
-    int mes;
-    int ano;
-};
-
-struct Data datas[2];
-
-int main() {
-    
-}
-#endif // ex06
+#endif // ex006
